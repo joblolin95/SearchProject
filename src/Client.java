@@ -32,19 +32,22 @@ public class Client {
         
         long endTime = System.nanoTime();
         long elapsedTime = endTime - startTime;
+        System.out.println("\tDFS");
         s.displayList();
         
-        System.out.printf("Time elapsed (in seconds): %3.3f\n",((double)elapsedTime)/Math.pow(10,9));  
+        System.out.printf("Time elapsed (in seconds): %3.5f\n",((double)elapsedTime)/Math.pow(10,9));  
         
         System.out.println();
-        startTime = System.nanoTime();
+       
         Dijkstra d = new Dijkstra("distanceMatrix.txt", 28);
+         startTime = System.nanoTime();
         d.dijkstra(begin, end);
         endTime = System.nanoTime();
-        elapsedTime = endTime - startTime;        
+        elapsedTime = endTime - startTime; 
+        System.out.println("\tDijkstra's Algorithm");
         s.displayList();
         
-        System.out.printf("Time elapsed (in seconds): %3.3f\n",((double)elapsedTime)/Math.pow(10,9));
+        System.out.printf("Time elapsed (in seconds): %3.5f\n",((double)elapsedTime)/Math.pow(10,9));
         
     }// end main
     
