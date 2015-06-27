@@ -14,12 +14,12 @@ import java.util.*;
 
 public class Search {
         
-        private int INTERSECTIONS;
-        private int [][] distance;
-        private int distanceSum;
-        private int begin;
-        private int end;
-        private ArrayList<Integer> shortestList;
+        protected int INTERSECTIONS;
+        protected int [][] distance;
+        protected int distanceSum;
+        protected int begin;
+        protected int end;
+        protected ArrayList<Integer> shortestList;
         
         private final String [] KEY = {"135 - 337", "135 - 62", "135 - 64", "135 - Quarry Rd", "Quarry Rd - Corydon Ramsey Rd",
             "Corydon Ramsey Rd - 62", "337 - 62", "62 - 64", "Crandall Lanesville Rd - 62","Crandall Lanesville Rd - 64", 
@@ -29,6 +29,10 @@ public class Search {
             "Blackiston Mill Rd - 31", "Veterans Parkway - 31", "65 - 60", "65 - Veterans Parkway","65 - 31", "62 - 11"};
 
         
+        public Search(){
+            INTERSECTIONS = 0;
+            distanceSum = 0;
+        }// end constructor
         
         public Search(int intersections){
             distanceSum = Integer.MAX_VALUE;
@@ -162,5 +166,13 @@ public class Search {
             System.out.println("Stop --- Arrived at destination");
             
         }// end displayList method
+        
+        public void displayKey(){
+            
+            for(int i = 0; i < KEY.length; i++){
+                System.out.println(i + ". " + KEY[i]);
+            }// end for
+            
+        }// end displayKey method
         
 }// end class

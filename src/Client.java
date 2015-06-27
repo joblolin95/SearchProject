@@ -8,13 +8,44 @@
  *
  * @author Blaine's Laptop
  */
+import java.util.Scanner;
 public class Client {
     
     public static void main(String [] args){
         
+        
+        
         Search s = new Search("distanceMatrix.txt", 28);
-        s.DFS(3, 18);
+        s.displayKey();
+        Scanner input = new Scanner(System.in);
+        
+        System.out.print("Enter the start intersection number: ");
+        int begin = input.nextInt();
+        
+        System.out.print("\nEnter the end intersection number: ");
+        int end = input.nextInt();
+        System.out.println();
+      
+        long startTime = System.nanoTime();
+        s.DFS(begin, end);
+        
+        
+        long endTime = System.nanoTime();
+        long elapsedTime = endTime - startTime;
         s.displayList();
+        
+        System.out.printf("Time elapsed (in seconds): %3.3f\n",((double)elapsedTime)/Math.pow(10,9));  
+        
+        System.out.println();
+        startTime = System.nanoTime();
+        Dijkstra d = new Dijkstra("distanceMatrix.txt", 28);
+        d.dijkstra(begin, end);
+        endTime = System.nanoTime();
+        elapsedTime = endTime - startTime;        
+        s.displayList();
+        
+        System.out.printf("Time elapsed (in seconds): %3.3f\n",((double)elapsedTime)/Math.pow(10,9));
+        
     }// end main
     
 }// end Client
