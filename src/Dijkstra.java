@@ -8,6 +8,8 @@
  *
  * @author Blaine's Laptop
  */
+import java.util.*;
+
 public class Dijkstra extends Search {
    
     
@@ -52,6 +54,7 @@ public class Dijkstra extends Search {
             dist[i] = Integer.MAX_VALUE;
         }// end for
         dist[begin] = 0;
+        pre[begin] = -1;
         
         for(int j = 0; j < dist.length; j++){
             int next = minVertex();
@@ -92,16 +95,23 @@ public class Dijkstra extends Search {
         return y;
     }// end minVertex
     
+    @Override
     public void displayList(){
         
         int i = pre[end];
-        while(i != 0){
+        
+        
+        
+        while(i != -1){
             
-            System.out.println(i);
+            shortestList.add(0, i);
             i = pre[i];
             
         }// end while
         
+    
+        
+        super.displayList();
         
     }// end displayPath method
     

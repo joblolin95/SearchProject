@@ -21,7 +21,7 @@ public class Search {
         protected int end;
         protected ArrayList<Integer> shortestList;
         
-        private final String [] KEY = {"135 - 337", "135 - 62", "135 - 64", "135 - Quarry Rd", "Quarry Rd - Corydon Ramsey Rd",
+        protected final String [] KEY = {"135 - 337", "135 - 62", "135 - 64", "135 - Quarry Rd", "Quarry Rd - Corydon Ramsey Rd",
             "Corydon Ramsey Rd - 62", "337 - 62", "62 - 64", "Crandall Lanesville Rd - 62","Crandall Lanesville Rd - 64", 
             "64 - 265", "265 - 65", "265 - Grant Line Rd", "265 - Charlestown Rd","Grant Line Rd - Klerner Ln", 
             "Grant Line Rd - Mt Tabor Rd", "Klerner Ln - Mt Tabor Rd", "Mt Tabor Rd - Charlestown Rd",
@@ -32,6 +32,7 @@ public class Search {
         public Search(){
             INTERSECTIONS = 0;
             distanceSum = 0;
+            shortestList = new ArrayList<>();
         }// end constructor
         
         public Search(int intersections){

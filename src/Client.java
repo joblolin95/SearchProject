@@ -45,7 +45,7 @@ public class Client {
         endTime = System.nanoTime();
         elapsedTime = endTime - startTime; 
         System.out.println("\tDijkstra's Algorithm");
-        s.displayList();
+        d.displayList();
         
         System.out.printf("Time elapsed (in seconds): %3.5f\n",((double)elapsedTime)/Math.pow(10,9));
         
