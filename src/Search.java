@@ -169,7 +169,7 @@ public class Search {
         }// end displayList method
         
         public void displayKey(){
-            
+            System.out.println("\tKey");
             for(int i = 0; i < KEY.length; i++){
                 System.out.println(i + ". " + KEY[i]);
             }// end for

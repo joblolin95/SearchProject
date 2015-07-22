@@ -99,7 +99,7 @@ public class Dijkstra extends Search {
     public void displayList(){
         
         int i = pre[end];
-        
+        shortestList.add(0, end);
         
         
         while(i != -1){
